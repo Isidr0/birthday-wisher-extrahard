@@ -10,6 +10,7 @@ import smtplib
 df = pandas.read_csv("birthdays.csv")
 df_dict = df.to_dict('records')
 
+# I struggled with this dictionary comprehension. It's a bit more complicated than the ones we've done previously.
 # new_dict = {new_key: new_value for (index, data_row) in data.iterrows()}
 new_dict = {(data_row.month, data_row.day): data_row for (index, data_row) in df.iterrows()}
 print(type(new_dict))
