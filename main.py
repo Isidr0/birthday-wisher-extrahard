@@ -1,5 +1,6 @@
 ##################### Extra Hard Starting Project ######################
 
+import os
 import pandas
 import datetime as dt
 import random
@@ -40,7 +41,7 @@ Subject: Hi Mailtrap\n\n
 
 with smtplib.SMTP("smtp.mailtrap.io", 587) as smtp:
     smtp.starttls()
-    smtp.login("6e9cda1e96c233", "f79a7290f26ade")
+    smtp.login("6e9cda1e96c233", os.environ.get("MAILTRAP_PASSWORD"))
     smtp.sendmail(sender, receiver, message)
 
 
